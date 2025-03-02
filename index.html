@@ -34,7 +34,7 @@
               dir="auto"
               name="message"
               id="message"
-              maxlength="150"
+              maxlength="100"
               placeholder="Type in short message to send in English or اردو"
             ></textarea>
             <input class="btn" type="submit" value="Enter" />
@@ -59,7 +59,7 @@
       if (window.location.search) {
         query = new URLSearchParams(window.location.search);
         query = Object.fromEntries(query.entries());
-        if (query["message"].toString().length > 150) {
+        if (query["message"].toString().length > 100) {
           alert("Please refrain from typing the message in URL!");
         } else {
           document.getElementById("sName").innerHTML =
