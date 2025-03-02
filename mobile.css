@@ -1,0 +1,26 @@
+@media only screen and (max-width: 800px){
+    body{
+        overflow: visible;
+    }
+    .img img{
+        width: 100%;
+        height: auto;
+        /* animation: none; */
+    }
+    .wrapper{
+        flex-direction: column;
+    }
+    .wrapper div{
+        width: 100%;
+    }
+    .countdown_credit{
+        display: none;
+    }
+    .greetings form{
+        width: 75%;
+    }
+    .greetings #sMessage{
+        max-width: 75%;
+    }
+    
+}

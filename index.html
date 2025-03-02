@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="animation.css">
+    <title>Ramadan Mubarak</title>
+  </head>
+
+  <body>
+    <section class="container">
+      <div class="wrapper">
+        <div class="img">
+          <img src="Cresent-Icon.png" alt="" />
+        </div>
+        <div class="greetings">
+          <h2>مارچ 2025</h2>
+          <h1 class="margin-16px">ماہ رمضان</h1>
+          <form class="margin-16px" action="/" method="get">
+            <input
+              required
+              class="input"
+              lang="ur"
+              dir="auto"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+            />
+            <textarea
+              lang="ur"
+              dir="auto"
+              name="message"
+              id="message"
+              maxlength="150"
+              placeholder="Type in short message to send in English or اردو"
+            ></textarea>
+            <input class="btn" type="submit" value="Enter" />
+          </form>
+          <h2 id="sName"></h2>
+          <p id="sMessage"></p>
+        </div>
+      </div>
+    </section>
+    <section class="countdown_credit">
+      <footer class="cWrapper">
+        <!-- <h1 id="countdown">3 days left</h1> -->
+        <p style="text-align: center">
+          <b>Credits: &nbsp; &nbsp; </b> Freepiks <br />
+          Muhammad Ashar Temoor
+        </p>
+      </footer>
+    </section>
+    <audio id="ramadantune" src="ramadantune.mp3" autoplay="true" loop></audio>
+    <script>
+      if (window.location.search) {
+        let query = new URLSearchParams(window.location.search);
+        query = Object.fromEntries(query.entries());
+        if (query["message"].toString().length > 150) {
+          alert("Please refrain from typing the message in URL!");
+        } else {
+          document.getElementById("sName").innerHTML =
+            query["name"] + "<br> " + "<h3>کی جانب سےآپ کو رمضان مبارک</h3>";
+          document.getElementById("sMessage").innerHTML = "<p>" + query["message"] + "</p>";
+          console.log(query);
+        }
+      }
+      let countdown = 3;
+      const display_count = document.getElementById("countdown");
+      const count = 24 * 60 * 60 * 1000;
+      let intervalId = setInterval(() => {
+        countdown--;
+        display_count.innerText = countdown + " days left";
+        if (countdown == 0) {
+          clearInterval(intervalId);
+          display_count.remove;
+        }
+      }, count);
+      let audio = document.getElementById("ramadantune");
+      // audio.play();
+      </script>
+  </body>
+</html>

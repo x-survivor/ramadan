@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Reem+Kufi+Fun:wght@400..700&display=swap');
+:root{
+    --primary-color: #cea92f;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("background.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.margin-16px{
+    margin-bottom: 16px;
+}
+.container{
+    position: absolute;
+    display: flex;
+    height: 100vh;
+    z-index: 0;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img img{
+    width: 200%;
+    height: fit-content;
+    animation: shake 2s ease-in-out;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
+.greetings{
+    height: 100vh;
+    z-index: 2;
+}
+.greetings h1, h2, h3{
+    font-family: 'Reem Kufi Fun', sans-serif;
+}
+.greetings p{
+    margin-top: 5px;
+    font-size: 16px;
+}
+.greetings form{
+    width: 50%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+.greetings .input{
+    background: none;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+}
+.greetings #message{
+    background: none;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    resize: none;
+    height: 5rem;
+    padding: 10px;
+}
+.greetings .btn{
+    outline: none;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    font-weight: 600;
+    padding: 10px;
+}
+.greetings h1{
+    font-size: 4rem;
+}
+#sName{
+    text-align: center;
+}
+#sMessage{
+    max-width: 50%;
+    overflow-wrap: break-word;
+    text-align:justify;
+    text-align-last: center;
+    backdrop-filter: blur(10px);
+    padding-bottom: 12px;
+    border-radius: 0 0 10px 10px;   
+    font-family: "Noto Nastaliq Urdu", serif;
+    font-weight: 400;
+}
+.countdown_credit{
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    z-index: 5;
+}
+
+.cWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin: 20px;
+    /* width: 35vw; */
+    padding: 20px;
+    /* height: 10vh; */
+    border-radius: 25px;   
+}
