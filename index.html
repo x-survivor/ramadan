@@ -71,10 +71,11 @@
       document.addEventListener("DOMContentLoaded", function () {
         let audio = document.getElementById("ramadantune");
         audio.play().catch((error) => console.log("Autoplay blocked:", error));
+        window.click();
       });
       function shareToWhatsApp() {
-        let text = encodeURIComponent("Check out this awesome website!");
-        let url = encodeURIComponent("https://example.com");
+        let text = encodeURIComponent(`Ramadan Mubarak! FROM: ${query["name"]}`);
+        let url = encodeURIComponent(window.location.href);
         let whatsappUrl = `https://wa.me/?text=${text}%20${url}`;
 
         window.open(whatsappUrl, "_blank");
