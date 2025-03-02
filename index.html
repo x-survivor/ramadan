@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mobile.css">
-    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="mobile.css" />
+    <link rel="stylesheet" href="animation.css" />
     <title>Ramadan Mubarak</title>
   </head>
 
@@ -18,7 +18,7 @@
         <div class="greetings">
           <h2>مارچ 2025</h2>
           <h1 class="margin-16px">ماہ رمضان</h1>
-          <form class="margin-16px" action="" method="get">
+          <form class="margin-16px" action="/" method="get">
             <input
               required
               class="input"
@@ -51,6 +51,7 @@
           <b>Credits: &nbsp; &nbsp; </b> Freepiks <br />
           Muhammad Ashar Temoor
         </p>
+        <button onclick="shareToWhatsApp()">Share on WhatsApp</button>
       </footer>
     </section>
     <video id="ramadantune" src="ramadantune.mp3" autoplay loop></video>
@@ -63,7 +64,8 @@
         } else {
           document.getElementById("sName").innerHTML =
             query["name"] + "<br> " + "<h3>کی جانب سےآپ کو رمضان مبارک</h3>";
-          document.getElementById("sMessage").innerHTML = "<p>" + query["message"] + "</p>";
+          document.getElementById("sMessage").innerHTML =
+            "<p>" + query["message"] + "</p>";
           console.log(query);
         }
       }
@@ -78,8 +80,17 @@
           display_count.remove;
         }
       }, count);
-      let audio = document.getElementById("ramadantune");
-      // audio.play();
-      </script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let audio = document.getElementById("ramadantune");
+        audio.play().catch((error) => console.log("Autoplay blocked:", error));
+      });
+      function shareToWhatsApp() {
+        let text = encodeURIComponent("Check out this awesome website!");
+        let url = encodeURIComponent("https://example.com");
+        let whatsappUrl = `https://wa.me/?text=${text}%20${url}`;
+
+        window.open(whatsappUrl, "_blank");
+      }
+    </script>
   </body>
 </html>
